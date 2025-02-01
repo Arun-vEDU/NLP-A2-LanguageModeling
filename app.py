@@ -56,7 +56,7 @@ model.eval()
 tokenizer = get_tokenizer('basic_english')
 
 # Text generation function
-def generate_text(prompt, max_seq_len=1000, temperature=1.0):
+def generate_text(prompt, max_seq_len=100, temperature=3.0):
     tokens = tokenizer(prompt)
     indices = [stoi.get(t, stoi['<unk>']) for t in tokens]  # Map tokens to indices
     hidden = model.init_hidden(1, device)
